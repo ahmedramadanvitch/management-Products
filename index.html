@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Start Bootstrap -->
+  <link rel="stylesheet" href="bootstrab/css/bootstrap.min.css">
+  <script defer src="bootstrab/js/bootstrap.bundle.min.js"></script>
+
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <link rel="stylesheet" href="./cruds.css">
+
+  <title>برنامج ادارة المخازن</title>
+</head>
+
+<body>
+
+  <div class="cruds">
+
+    <div class="container">
+
+      <div class="head text-center text-uppercase p-4">
+
+        <h1>ادارة المخازن</h1>
+        <p class="lead fs-4">
+          تــصــمــيــم و انــشـــاء احــمــد رمــضــان
+        </p>
+
+      </div>
+
+      <div class="inputs">
+
+        <form action="">
+
+          <div class="form-item">
+            <input class="form-control text-white" type="text" id="title" placeholder="اسم المنتج" required>
+          </div>
+
+          <div class="total-price-discount flex-column flex-lg-row">
+            <input onkeyup="get_PriceOf_One_and_total_payment();" placeholder="عدد القطع" type="number"
+              class="form-control text-white" id="total-all-product" required>
+            <input onkeyup="get_PriceOf_One_and_total_payment();" placeholder="سعر الشراء"
+              class="form-control text-white" type="number" id="price-buy" required>
+            <input onkeyup="get_PriceOf_One_and_total_payment();" placeholder="مصاريف الشحن"
+              class="form-control text-white" type="number" id="discount-msaref-shahn" required>
+          </div>
+
+          <!-- اجمالى المدفوعات -->
+          <small id="total-payments" class="small total-payments"> </small>
+
+          <!-- سعر القطعه الواحده بعد اضافة مصاريف الشحن -->
+          <small id="price-one-product-after-discount" class="small price-one"> </small>
+
+          <div class="tager-date flex-column flex-md-row">
+            <input type="text" id="title-tager" placeholder="اسم التاجر">
+
+            <input type="text" id="date-buy" placeholder="تاريخ الشراء">
+          </div>
+
+          <button id="submit" class="btn"> انشاء </button>
+
+        </form>
+
+      </div>
+
+      <div class="outputs">
+
+        <div class="searchblock">
+          <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="بحث">
+
+          <div class="btnSearch">
+            <button onclick="getSearchMood(this.id)" id="search-by-product" class="btn"> بحث باسم المنتج </button>
+            <button onclick="getSearchMood(this.id)" id="search-by-tager" class="btn"> بحث باسم التاجر</button>
+          </div>
+        </div>
+
+        <table>
+          <tr>
+
+            <th> الرقم </th>
+
+            <th> اسم المنتج </th>
+
+            <th> اجمالى عدد القطع </th>
+
+            <th> سعر الشراء </th>
+
+            <th> اضافة مصاريف الشحن </th>
+
+            <th> اجمالى المدفوعات </th>
+
+            <th> سعر القطعه بعد اضافة الشحن </th>
+
+            <th> اسم التاجر </th>
+
+            <th> التاريخ </th>
+
+            <th> التعديل </th>
+
+            <th> الحذف </th>
+
+          </tr>
+
+          <tbody id="tbody">
+          </tbody>
+        </table>
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <script src="cruds.js"></script>
+</body>
+
+</html>
